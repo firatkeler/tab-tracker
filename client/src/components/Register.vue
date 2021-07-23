@@ -1,6 +1,6 @@
 <template>
   <v-layout column align-center justify-center>
-      <v-container>
+      <v-container class="col-6 main">
         <v-row>
           <v-col
             cols="12"
@@ -9,12 +9,12 @@
               <v-toolbar flat dense class="cyan" dark>
                 <v-toolbar-title>Register</v-toolbar-title>
               </v-toolbar>
-              <v-container fill-height fluid>
+              <v-container fill-height fluid class="col-9">
                 <v-row
                   align="center"
                   justify="center"
                 >
-                  <v-col cols="9">
+                  <v-col cols="12">
                     <v-text-field type="email" v-model="email" name="email" placeholder="email" />
                   </v-col>
                 </v-row>
@@ -22,14 +22,26 @@
                   align="center"
                   justify="center"
                 >
-                  <v-col cols="9">
+                  <v-col cols="12">
                     <v-text-field type="password" v-model="password" name="password" placeholder="password" />
                   </v-col>
                 </v-row>
-                  <br>
-                  <div class="error" v-html="error"></div>
-                  <br>
-                  <v-btn @click="register">Register</v-btn>
+                <v-row
+                  align="center"
+                  justify="center"
+                >
+                  <v-col cols="12">
+                    <div class="error" v-html="error"></div>
+                  </v-col>
+                </v-row>
+                <v-row
+                  align="center"
+                  justify="center"
+                >
+                  <v-col cols="12">
+                    <v-btn @click="register">Register</v-btn>
+                  </v-col>
+                </v-row>
               </v-container>
             </div>
           </v-col>
@@ -64,6 +76,9 @@ export default {
 </script>
 
 <style scoped>
+  .main {
+    border: 1px solid gray;
+  }
   .error {
     color: red;
   }
